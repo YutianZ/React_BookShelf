@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
 
-import MainPage from './Components/MainPage';
-import SearchPage from './Components/SearchPage';
+import MainPage from './Components/MainPage/MainPage';
+import SearchPage from './Components/SearchPage/SearchPage';
 
 class App extends Component {
   state = {

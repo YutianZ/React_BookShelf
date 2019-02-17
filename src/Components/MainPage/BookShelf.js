@@ -1,7 +1,7 @@
 //This component is responsible for display books in each shelf
 //It accept props shelf title and books
 import React from 'react';
-import Book from './Book';
+import Book from '../Book';
 
 class BookShelf extends React.Component {
     render() {
