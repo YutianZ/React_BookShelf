@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 class MainPage extends React.Component {
     render() {
-        let reading = this.props.books.filter((book) => book.group === 'reading')
-        let wantToRead = this.props.books.filter((book) => book.group === 'wantToRead')
-        let read = this.props.books.filter((book) => book.group === 'read')
+        let reading = this.props.books.filter((book) => book.shelf === 'currentlyReading')
+        let wantToRead = this.props.books.filter((book) => book.shelf === 'wantToRead')
+        let read = this.props.books.filter((book) => book.shelf === 'read')
         return(
             <div>
                 <div className='list-books'>
@@ -14,9 +14,9 @@ class MainPage extends React.Component {
                     <h1>MyReads</h1>
                 </div>
                 <div className='list-books-content'>
-                    <BookShelf shelfTitle="Current Reading" books={reading}></BookShelf>
-                    <BookShelf shelfTitle="Want To Read" books={wantToRead}></BookShelf>
-                    <BookShelf shelfTitle="Read" books={read}></BookShelf>
+                    <BookShelf changeShelf={this.props.changeShelf} shelfTitle="Current Reading" books={reading}></BookShelf>
+                    <BookShelf changeShelf={this.props.changeShelf} shelfTitle="Want To Read" books={wantToRead}></BookShelf>
+                    <BookShelf changeShelf={this.props.changeShelf} shelfTitle="Read" books={read}></BookShelf>
                 </div>
                 </div>
                 <div className="open-search">

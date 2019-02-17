@@ -11,7 +11,7 @@ class SearchBar extends React.Component {
         BooksAPI.search(this.state.query)
             .then((books) => {
                 if(books) {
-                    this.props.getSearchResults();
+                    this.props.getSearchResults(books);
                 }
             });
     }
