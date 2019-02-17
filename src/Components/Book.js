@@ -13,11 +13,23 @@ class Book extends React.Component {
                     </div>
                     <BookController/> 
                 </div>
-                <div className="book-title">title
+                <div className="book-title">
+                    {this.props.book.title}
                 </div>
-                <div className="book-authors">author
+                <div className="book-authors">
+                    {
+                        this.props.book.authors.map((author) => {
+                            return (
+                                <p>{author}</p>
+                            )
+                        })
+                    }
                 </div>
             </div>            
         )
     }
 }
+
+export default Book;
+
+//
