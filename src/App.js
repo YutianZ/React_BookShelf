@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Route } from 'react-router-dom';
 
-import BookShelf from './Components/BookShelf';
+import MainPage from './Components/MainPage';
+import SearchPage from './Components/SearchPage';
 
 class App extends Component {
   state = {
@@ -34,24 +36,13 @@ class App extends Component {
   }
 
   render() {
-    let reading = this.state.books.filter((book) => book.group === 'reading')
-    let wantToRead = this.state.books.filter((book) => book.group === 'wantToRead')
-    let read = this.state.books.filter((book) => book.group === 'read')
+    //filter books by group
+    //pass books data to corresponding book shelf
+    
     return (
-      <div>
-        <div className='list-books'>
-          <div className='list-books-title'>
-              <h1>MyReads</h1>
-          </div>
-          <div className='list-books-content'>
-            <BookShelf classify="Current Reading" books={reading}></BookShelf>
-            <BookShelf classify="Want To Read" books={wantToRead}></BookShelf>
-            <BookShelf classify="Read" books={read}></BookShelf>
-          </div>
-        </div>
-        <div className="open-search">
-        <button>Add a book</button>
-      </div>
+      <div className='app'>
+        <Route exact path='/' render={() => (<MainPage books={this.state.books}/>)}></Route>
+        <Route path='/search' render={() => (<SearchPage/>)}></Route>
       </div>
     );
   }
