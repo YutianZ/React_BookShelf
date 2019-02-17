@@ -8,9 +8,16 @@ class BookController extends React.Component {
         this.props.changeShelf(this.props.book,event.target.value);
     }
     render() {
+        let currentShelf = 'none';
+        for(let book of this.props.books) {
+            if(this.props.book.title === book.title) {
+                currentShelf = book.shelf;
+                break;
+            }
+        }
         return(
             <div className="book-shelf-changer">
-                <select onChange={this.updateShelf} defaultValue={this.props.book.shelf}>
+                <select onChange={this.updateShelf} defaultValue={currentShelf}>
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>

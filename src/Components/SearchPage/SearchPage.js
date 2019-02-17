@@ -6,16 +6,16 @@ import SearchResults from './SearchResults';
 
 class SearchPage extends React.Component {
     state = {
-        books: []
+        newBooks: []
     }
-    getSearchResults = (books) => {
-        this.setState({books:books})
+    getSearchResults = (newBooks) => {
+        this.setState({newBooks: newBooks})
     }
     render() {
         return(
         <div>
             <SearchBar getSearchResults={this.getSearchResults}/>
-            <SearchResults books = {this.state.books} />
+            <SearchResults changeShelf={this.props.changeShelf} newBooks = {this.state.newBooks} books={this.props.books}/>
         </div>)
     }
 }

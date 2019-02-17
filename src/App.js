@@ -27,11 +27,10 @@ class App extends Component {
   render() {
     //filter books by group
     //pass books data to corresponding book shelf
-    
     return (
       <div className='app'>
         <Route exact path='/' render={() => (<MainPage changeShelf={this.changeShelf} books={this.state.books}/>)}></Route>
-        <Route path='/search' render={() => (<SearchPage/>)}></Route>
+        <Route path='/search' render={() => (<SearchPage books={this.state.books} changeShelf={this.changeShelf}/>)}></Route>
       </div>
     );
   }
