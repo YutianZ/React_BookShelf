@@ -6,8 +6,8 @@ class SearchResults extends React.Component {
         return(
             <div className="search-books-results">
                 <ol className="books-grid">
-                    {this.props.newBooks.map(book => {
-                        return (<li>
+                    {this.props.newBooks.map((book, index) => {
+                        return (<li key={index}>
                                     <Book changeShelf={this.props.changeShelf} book={book} books={this.props.books}></Book>
                                 </li>
                                 )

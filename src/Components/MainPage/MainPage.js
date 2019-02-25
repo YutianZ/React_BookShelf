@@ -14,9 +14,9 @@ class MainPage extends React.Component {
                     <h1>MyReads</h1>
                 </div>
                 <div className='list-books-content'>
-                    <BookShelf changeShelf={this.props.changeShelf} shelfTitle="Current Reading" books={reading}></BookShelf>
-                    <BookShelf changeShelf={this.props.changeShelf} shelfTitle="Want To Read" books={wantToRead}></BookShelf>
-                    <BookShelf changeShelf={this.props.changeShelf} shelfTitle="Read" books={read}></BookShelf>
+                    <BookShelf key="Current Reading" changeShelf={this.props.changeShelf} shelfTitle="Current Reading" books={reading}></BookShelf>
+                    <BookShelf key="Want To Read" changeShelf={this.props.changeShelf} shelfTitle="Want To Read" books={wantToRead}></BookShelf>
+                    <BookShelf key="Read" changeShelf={this.props.changeShelf} shelfTitle="Read" books={read}></BookShelf>
                 </div>
                 </div>
                 <div className="open-search">

@@ -10,8 +10,8 @@ class BookShelf extends React.Component {
                 <h2 className="bookshelf-title">{this.props.shelfTitle}</h2>
                 <div className="bookshelf-books">
                     <ol className="books-grid">
-                        {this.props.books.map(book => {
-                            return (<li>
+                        {this.props.books.map((book, index) => {
+                            return (<li key={index}>
                                 <Book books={this.props.books} changeShelf={this.props.changeShelf} book={book} />
                             </li>
                         )})}

@@ -18,9 +18,9 @@ class Book extends React.Component {
                 </div>
                 <div className="book-authors">
                     {
-                        this.props.book.authors.map((author) => {
+                        this.props.book.authors.map((author, index) => {
                             return (
-                                <p>{author}</p>
+                                <p key={index}>{author}</p>
                             )
                         })
                     }
